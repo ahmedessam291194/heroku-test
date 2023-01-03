@@ -13,6 +13,7 @@ use Shopify\Context;
 use Shopify\ApiVersion;
 use Shopify\Webhooks\Registry;
 use Shopify\Webhooks\Topics;
+use Illuminate\Support\Facades\Config;
 
 class AppServiceProvider extends ServiceProvider
 {
