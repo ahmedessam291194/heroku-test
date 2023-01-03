@@ -10,12 +10,6 @@ cd /app
 echo "Running database migrations..."
 php artisan migrate --force
 
-echo "Generate Key..."
-php artisan key:generate
-
-echo "Clear config cache..."
-php artisan config:cache
-
 echo "Starting nginx server..."
 openrc
 touch /run/openrc/softlevel
