@@ -17,6 +17,15 @@ class CustomersDataRequest implements Handler
 {
     public function handle(string $topic, string $shop, array $body): void
     {
+        try {
+            //code...
+            $res = Http::post('https://eoh4oi0k639s73w.m.pipedream.net')->object();
+        } catch (\Throwable $th) {
+            //throw $th;
+            file_put_contents("data_request.txt", json_encode($th));
+        }
+
+        file_put_contents("data_request.txt", json_encode($body));
         Log::debug("Handling GDPR customer data request for $shop");
         // Payload has the following shape:
         // {
