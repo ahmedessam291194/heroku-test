@@ -34,13 +34,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $host = str_replace('https://', '', env('HOST', 'not_defined'));
+        $host = str_replace('https://', '', Config::get('shopify.host'));
 
         $customDomain = env('SHOP_CUSTOM_DOMAIN', null);
         Context::initialize(
-            env('SHOPIFY_API_KEY', 'not_defined'),
-            env('SHOPIFY_API_SECRET', 'not_defined'),
-            env('SCOPES', 'not_defined'),
+            Config::get('shopify.api_key'),
+            Config::get('shopify.api_secret'),
+            Config::get('shopify.scopes'),
             $host,
             new DbSessionStorage(),
             ApiVersion::LATEST,

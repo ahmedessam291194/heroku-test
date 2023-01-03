@@ -26,5 +26,9 @@ return [
         "currencyCode" => "USD", // Currently only supports USD
         "interval" => EnsureBilling::INTERVAL_ONE_TIME,
     ],
+    'api_key' => env('SHOPIFY_API_KEY', ''),
+    'api_secret' => env('SHOPIFY_API_SECRET', ''),
+    'scopes' => env('SCOPES', ['']),
+    'host' => env('HOST', ''),
 
 ];
