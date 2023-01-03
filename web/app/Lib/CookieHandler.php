@@ -17,7 +17,7 @@ class CookieHandler
             $cookie->getValue(),
             $cookie->getExpire() ? ceil(($cookie->getExpire() - time()) / 60) : null,
             '/',
-            parse_url(Context::$HOST_SCHEME . "://" . Context::$HOST_NAME, PHP_URL_HOST),
+            Context::$HOST_NAME,
             $cookie->isSecure(),
             $cookie->isHttpOnly(),
             false,

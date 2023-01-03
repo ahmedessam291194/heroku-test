@@ -1,14 +1,11 @@
-/web/frontend/node_modules
 /web/public/hot
 /web/public/storage
 /web/storage/*.key
-/web/storage/db.sqlite
 /web/vendor
 /web/composer.lock
-.env
-.env.*
-!.env.example
-!.env.testing
+
+public/*
+
 web/.phpunit.result.cache
 docker-compose.override.yml
 Homestead.json
