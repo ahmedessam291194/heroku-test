@@ -22,7 +22,10 @@ RUN composer install
 RUN touch /app/storage/db.sqlite
 RUN chown www-data:www-data /app/storage/db.sqlite
 
-RUN cd frontend && npm install && npm run build
-RUN composer build
+RUN npm install
+ENV NODE_OPTIONS=--openssl-legacy-provider
+RUN npm run build
 
-ENTRYPOINT [ "/app/entrypoint.sh" ]
+RUN cd ..
+
+ENTRYPOINT [ "sh", "/app/entrypoint.sh" ]
